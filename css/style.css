@@ -388,3 +388,9 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 .thanks { font-size: clamp(30px, 6vw, 52px); font-weight: 900; letter-spacing: -0.02em; line-height: 1.25; }
 .thanks-sub { margin-top: 10px; color: #b9bec6; font-size: 18px; margin-bottom: 40px; }
 .doc-blue .step:not(.step-problem) { --c-num: var(--accent-text); }
+.stages { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 8px; }
+@media (min-width: 600px) { .stages { grid-template-columns: 1fr 1fr; } }
+.stages li { display: flex; gap: 12px; align-items: flex-start; border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; background: var(--bg-soft); }
+.stages strong { display: block; font-weight: 700; }
+.stage-n { flex: none; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--er-blue); color: #fff; font-weight: 800; font-size: 16px; }
+#ai .proj-main > div:last-child h4 { margin-top: 22px; }
