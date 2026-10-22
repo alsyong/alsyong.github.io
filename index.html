@@ -52,7 +52,7 @@
       <div class="wrap hero-grid">
         <div class="hero-text">
           <p class="hero-role">게임 콘텐츠 기획</p>
-          <h1 class="hero-title" id="hero-title">재미의 핵심을 찾고 구체화 하는<br class="br-wide"> 기획자 <em>이민용</em> 입니다</h1>
+          <h1 class="hero-title" id="hero-title">재미의 핵심을 <span class="hl">찾고</span> <span class="hl">구체화</span> 하는<br class="br-wide"> 기획자 <em>이민용</em> 입니다</h1>
           <p class="hero-name">이민용<span>Rlee MinYong</span></p>
           <p class="hero-desc">다양한 게임을 플레이하고 분석하며, 무엇이 재미를 만들어 내는지를 항상 고민해 왔습니다.</p>
           <div class="hero-actions">
@@ -61,6 +61,20 @@
             </a>
             <a class="btn btn-ghost" href="assets/documents/portfolio-overview.pdf" download="이민용_포트폴리오_개요.pdf">포트폴리오 PDF
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg>
+            </a>
+          </div>
+          <div class="hero-proof">
+            <a class="proof" href="#eternal-return">
+              <span class="proof-k"><b>찾기</b> 분석 &amp; 제안</span>
+              <strong class="proof-t">제3자 개입은 문제가 아니다</strong>
+              <span class="proof-d">이터널 리턴 패치 1.4 ~ 12.5를 추적해, 진짜 문제를 다시 정의했습니다.</span>
+              <span class="proof-go">사례 보기 →</span>
+            </a>
+            <a class="proof" href="#ai">
+              <span class="proof-k"><b>구체화</b> 직접 구현</span>
+              <strong class="proof-t">선출을 대신 판단해 주는 프로그램</strong>
+              <span class="proof-d">상대 6마리를 넣으면 선출 3마리, 선봉, 대처법까지. 웹에서 바로 써 볼 수 있습니다.</span>
+              <span class="proof-go">시연 보기 →</span>
             </a>
           </div>
         </div>
@@ -149,23 +163,46 @@
         <article class="doc-feature doc-blue" id="eternal-return" aria-labelledby="er-h">
           <div class="doc-band"></div>
           <div class="df-inner">
-            <div class="df-head">
+            <div class="df-head er-hook">
               <div>
                 <p class="doc-type">콘텐츠 기획 · 분석 &amp; 제안서 · 35장</p>
-                <h3 class="df-title" id="er-h">이터널 리턴 분석 &amp; 제안서</h3>
-                <p class="df-quote">개입은 두되, 예측하고 복구할 수 있게</p>
+                <p class="hook-q">제3자 개입, 없애야 할까?</p>
+                <p class="hook-a">아니다. 문제는 개입이 아니라, <em>복구할 수 없는 손해</em>다.</p>
+                <h3 class="df-title sm" id="er-h">이터널 리턴 분석 &amp; 제안서</h3>
+                <p class="df-quote sm">개입은 두되, 예측하고 복구할 수 있게</p>
+                <ul class="fact-row" role="list">
+                  <li><b>1.4 ~ 12.5</b><span>패치 노트 추적</span></li>
+                  <li><b>4차</b><span>개편 흐름 정리</span></li>
+                  <li><b>3가지</b><span>개선 제안</span></li>
+                </ul>
                 <div class="case-meta">
                   <div><span class="meta-label">주제</span><span>안전지대 / 제3자 개입, 루트 고착화, 상자 / 보급 파밍</span></div>
                   <div><span class="meta-label">근거</span><span>공식 패치 노트, 공식 랭크 FAQ, 커뮤니티 사례</span></div>
-                  <div><span class="meta-label">방식</span><span>문제 → 개발진의 시도 → 남은 문제 → 제안</span></div>
                 </div>
                 <div class="btn-row">
                   <a class="btn btn-primary btn-sm" href="assets/documents/eternal-return-analysis.pdf" target="_blank" rel="noopener">PDF 열람</a>
                   <a class="btn btn-ghost btn-sm" href="assets/documents/eternal-return-analysis.pdf" download="이민용_이터널리턴_분석제안서.pdf">PDF 저장</a>
                 </div>
               </div>
-              <figure class="figure">
-                <a href="assets/images/er-01.webp" target="_blank" rel="noopener"><img src="assets/images/er-01.webp" width="1600" height="900" loading="lazy" decoding="async" alt="이터널 리턴 분석 & 제안서 표지. 부제: 개입은 두되, 예측하고 복구할 수 있게"></a>
+              <figure class="abc">
+                <svg viewBox="0 0 420 300" role="img" aria-labelledby="abc-t">
+                  <title id="abc-t">A팀과 B팀이 교전하는 중에 C팀이 개입하는 상황</title>
+                  <defs><marker id="abc-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#d0414f"/></marker></defs>
+                  <circle cx="110" cy="96" r="52" class="abc-team"/>
+                  <circle cx="310" cy="96" r="52" class="abc-team"/>
+                  <text x="110" y="104" class="abc-label">A팀</text>
+                  <text x="310" y="104" class="abc-label">B팀</text>
+                  <text x="210" y="108" class="abc-vs">VS</text>
+                  <path d="M300 232 L222 140" class="abc-arrow" marker-end="url(#abc-arrow)"/>
+                  <circle cx="318" cy="246" r="44" class="abc-third"/>
+                  <text x="318" y="254" class="abc-label">C팀</text>
+                  <text x="196" y="214" class="abc-note">예고 없는 개입</text>
+                </svg>
+                <figcaption>
+                  <ol class="abc-flow" role="list">
+                    <li>예측할 수 없는 개입</li><li>대응 수단 없음</li><li>손해를 한 판 내내 복구 못 함</li><li class="bad">1등 대신 순위 방어만</li>
+                  </ol>
+                </figcaption>
               </figure>
             </div>
 
@@ -324,13 +361,33 @@
             <div><dt>내 역할</dt><dd>문제 정의, 기능 설계, 판단 기준, 검증</dd></div>
             <div><dt>사용 도구</dt><dd>Claude Code, ChatGPT</dd></div>
           </dl>
+          <div class="demo">
+            <div class="demo-media">
+              <video class="demo-video" muted loop playsinline preload="none" poster="assets/images/battle-demo-poster.webp" aria-label="배틀 보조 프로그램 웹 버전 시연: 예시 상대를 불러와 계산하면 선출 3마리와 선봉, 상대별 대처법이 나온다">
+                <source src="assets/videos/battle-demo.webm" type="video/webm">
+                <source src="assets/videos/battle-demo.mp4" type="video/mp4">
+              </video>
+              <button class="demo-toggle" type="button" aria-label="시연 영상 일시정지">❚❚</button>
+              <span class="demo-tag">실제 웹 버전 화면 · 소리 없음</span>
+            </div>
+            <div class="demo-side">
+              <p class="doc-type demo-name">포켓몬챔피언스 배틀 보조 프로그램</p>
+              <p class="hook-q sm">상대 6마리를 보고,<br>누구를 내야 할지 막막할 때</p>
+              <p class="demo-lead">상대를 입력하면 <strong>선출 3마리, 선봉, 상대별 대처법</strong>을 바로 알려 줍니다. 집 PC용 프로그램의 판단 로직을 그대로 웹으로 옮겼습니다.</p>
+              <ul class="fact-row" role="list">
+                <li><b>44단계+</b><span>기능 추가 기록</span></li>
+                <li><b>41 / 42</b><span>화면 인식 검증</span></li>
+                <li><b>3명</b><span>지인 테스트</span></li>
+              </ul>
+              <a class="btn btn-primary demo-cta" href="battle/">예시 상대로 바로 계산해 보기 →</a>
+              <p class="note">설치 없이 브라우저에서 실행됩니다. 첫 실행 때 몇 초 로딩이 있습니다.</p>
+            </div>
+          </div>
           <div class="proj-main">
             <div>
               <h3 class="proj-title">포켓몬챔피언스 배틀 보조 프로그램</h3>
               <p class="proj-sub">Claude Code로 직접 만든 개인 툴</p>
-              <div class="btn-row" style="margin-top:14px">
-                <a class="btn btn-primary btn-sm" href="battle/">웹에서 직접 써 보기</a>
-              </div>
+
               <h4>기획 의도</h4>
               <p>게임에 익숙하지 않은 사람은 상대 파티를 보고도 어떤 포켓몬을 어떤 순서로 내보내고 어떻게 행동할지 판단하기 어렵다는 것을 느끼고 기획했습니다.</p>
               <h4>동작 흐름</h4>

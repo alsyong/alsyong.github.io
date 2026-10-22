@@ -519,3 +519,63 @@ html[data-theme="light"] {
   .pc-contact { grid-column: 1 / -1; grid-row: 2; margin: 0; padding: 12px 14px 14px; border-top: 0; }
   .pc-contact a { font-size: 16px; }
 }
+
+/* =====================================================================
+   후킹: 첫 화면 증거 카드 · 이터널 리턴 질문형 도입 · 배틀 보조 시연
+   ===================================================================== */
+.hero-title .hl { background: linear-gradient(transparent 62%, var(--brand-tint) 62%); padding: 0 2px; }
+.hero-proof { margin-top: 32px; display: grid; gap: 12px; max-width: 720px; }
+@media (min-width: 640px) { .hero-proof { grid-template-columns: 1fr 1fr; } }
+.proof { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px; text-decoration: none; color: var(--text);
+  background: var(--card); border: 1px solid var(--line-strong); border-left: 6px solid var(--brand); border-radius: var(--r);
+  transition: border-color .15s, transform .15s; }
+.proof:hover { border-color: var(--accent-text); transform: translateY(-2px); }
+.proof-k { font-size: 14px; color: var(--text-muted); letter-spacing: 0.02em; }
+.proof-k b { font-weight: 800; color: var(--accent-text); margin-right: 6px; font-size: 15px; }
+.proof-t { font-size: 19px; font-weight: 800; line-height: 1.35; }
+.proof-d { font-size: 16px; color: var(--text-sub); line-height: 1.5; }
+.proof-go { margin-top: auto; padding-top: 4px; font-size: 15px; font-weight: 700; color: var(--accent-text); }
+@media (prefers-reduced-motion: reduce) { .proof { transition: none; } .proof:hover { transform: none; } }
+
+/* 질문형 도입 */
+.hook-q { margin-top: 10px; font-size: clamp(28px, 4.6vw, 42px); font-weight: 900; line-height: 1.2; letter-spacing: -0.02em; }
+.hook-q.sm { margin-top: 0; font-size: clamp(24px, 3.6vw, 32px); }
+.hook-a { margin-top: 10px; font-size: clamp(19px, 2.6vw, 23px); font-weight: 600; color: var(--text-sub); line-height: 1.45; }
+.hook-a em { font-style: normal; font-weight: 800; color: var(--red-num); }
+.df-title.sm { margin-top: 22px; font-size: 22px; }
+.df-quote.sm { margin-top: 4px; font-size: 18px; }
+.fact-row { list-style: none; padding: 0; margin: 18px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line-strong); border-radius: var(--r); }
+.fact-row li { padding: 10px 12px; display: grid; gap: 2px; }
+.fact-row li + li { border-left: 1px solid var(--line-strong); }
+.fact-row b { font-size: clamp(18px, 2.6vw, 24px); font-weight: 900; line-height: 1.1; color: var(--text); }
+.fact-row span { font-size: 14px; color: var(--text-muted); }
+.er-hook .case-meta { margin-top: 16px; }
+.er-hook .case-meta > div { grid-template-columns: 52px 1fr; }
+
+/* A·B·C 도식 */
+.abc { margin: 0; background: var(--bg-soft); border: 1px solid var(--line-strong); border-radius: var(--r); padding: 18px; }
+.abc svg { width: 100%; height: auto; display: block; }
+.abc-team { fill: var(--brand); }
+.abc-third { fill: #b5303c; }
+.abc-label { fill: #fff; font-size: 22px; font-weight: 700; text-anchor: middle; }
+.abc-vs { fill: var(--text); font-size: 34px; font-weight: 900; text-anchor: middle; }
+.abc-arrow { stroke: #d0414f; stroke-width: 10; stroke-linecap: round; fill: none; }
+.abc-note { fill: var(--red-num); font-size: 17px; font-weight: 700; text-anchor: end; }
+.abc-flow { list-style: none; padding: 0; margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 6px; counter-reset: f; }
+.abc-flow li { font-size: 15px; font-weight: 600; padding: 4px 10px; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--text-sub); background: var(--card); }
+.abc-flow li + li::before { content: "→ "; color: var(--text-muted); font-weight: 400; }
+.abc-flow li.bad { color: var(--red-num); border-color: color-mix(in srgb, var(--red-num) 50%, var(--line-strong)); }
+
+/* 배틀 보조 시연 */
+.demo { display: grid; gap: 24px; padding: 24px 20px; border-bottom: 1px solid var(--line-strong); background: var(--bg-soft); }
+@media (min-width: 960px) { .demo { grid-template-columns: 1.25fr 1fr; padding: 28px; gap: 32px; align-items: center; } }
+.demo-media { position: relative; border: 1px solid var(--line-strong); border-radius: var(--r); overflow: hidden; background: #0b0c0f; aspect-ratio: 960 / 576; }
+.demo-video { width: 100%; height: 100%; display: block; object-fit: cover; }
+.demo-toggle { position: absolute; right: 10px; bottom: 10px; width: 40px; height: 40px; border-radius: var(--r); border: 1px solid rgba(255,255,255,.25); background: rgba(0,0,0,.6); color: #fff; font-size: 14px; cursor: pointer; }
+.demo-tag { position: absolute; left: 10px; top: 10px; font-size: 13px; padding: 2px 8px; border-radius: 2px; background: rgba(0,0,0,.6); color: #e6e8eb; }
+.demo-lead { margin-top: 12px; color: var(--text-sub); }
+.demo-lead strong { color: var(--text); }
+.demo-cta { margin-top: 20px; min-height: 54px; width: 100%; font-size: 17px; }
+.demo-side .note { margin-top: 8px; }
+.hero-title .hl { background: none; padding: 0; text-decoration: underline; text-decoration-color: var(--brand); text-decoration-thickness: 6px; text-underline-offset: 8px; text-decoration-skip-ink: none; }
+.demo-name { font-size: 16px; font-weight: 700; color: var(--accent-text); margin-bottom: 8px; }

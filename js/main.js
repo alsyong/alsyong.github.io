@@ -143,3 +143,30 @@ document.querySelectorAll('[data-youtube]').forEach(function (box) {
     sx = null;
   });
 })();
+
+// 배틀 보조 시연 영상: 화면에 보일 때만 소리 없이 재생, 정지 버튼, 움직임 줄이기 설정 존중
+(function () {
+  var v = document.querySelector('.demo-video');
+  var btn = document.querySelector('.demo-toggle');
+  if (!v || !btn) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var userPaused = reduce;
+  function label() {
+    var playing = !v.paused;
+    btn.textContent = playing ? '❚❚' : '▶';
+    btn.setAttribute('aria-label', playing ? '시연 영상 일시정지' : '시연 영상 재생');
+  }
+  btn.addEventListener('click', function () {
+    if (v.paused) { userPaused = false; v.play().catch(function () {}); }
+    else { userPaused = true; v.pause(); }
+  });
+  v.addEventListener('play', label); v.addEventListener('pause', label);
+  label();
+  if (!('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting && !userPaused) { v.play().catch(function () {}); }
+      else if (!e.isIntersecting && !v.paused) { v.pause(); }
+    });
+  }, { threshold: 0.4 }).observe(v);
+})();
