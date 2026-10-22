@@ -14,9 +14,13 @@
   <link rel="canonical" href="https://alsyong.github.io/">
   <meta property="og:url" content="https://alsyong.github.io/">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#111317">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fastly.jsdelivr.net" crossorigin>
+  <script>
+    // 저장된 테마를 그리기 전에 적용 (기본: 어두운 테마)
+    try { if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {}
+  </script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,13 +29,19 @@
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="#top">이민용<span>Portfolio</span></a>
-      <nav class="nav" aria-label="주요 메뉴">
-        <a href="#case">대표작</a>
-        <a href="#docs">기획서</a>
-        <a href="#projects">프로젝트 &amp; 툴</a>
-        <a href="#tools">도구와 AI</a>
-        <a href="#contact">연락처</a>
-      </nav>
+      <div class="header-right">
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="#projects">프로젝트</a>
+          <a href="#docs">기획서</a>
+          <a href="#ai">AI 활용</a>
+          <a href="#tools">도구</a>
+          <a href="#contact">연락처</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="밝은 테마로 바꾸기" title="테마 바꾸기">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -45,7 +55,7 @@
           <p class="hero-name">이민용<span>Rlee MinYong</span></p>
           <p class="hero-desc">다양한 게임을 플레이하고 분석하며, 무엇이 재미를 만들어 내는지를 항상 고민해 왔습니다.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#case">대표작 보기
+            <a class="btn btn-primary" href="#projects">포트폴리오 보기
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
             </a>
             <a class="btn btn-ghost" href="assets/documents/portfolio-overview.pdf" download="이민용_포트폴리오_개요.pdf">포트폴리오 PDF
@@ -64,71 +74,58 @@
       </div>
     </section>
 
-    <!-- 2. 대표작 -->
-    <section class="section case" id="case" aria-labelledby="case-h">
+    <!-- 2. 프로젝트 -->
+    <section class="section" id="projects" aria-labelledby="projects-h">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <h2 id="case-h">2. 대표작</h2>
-            <p>분석 &amp; 제안서 · 콘텐츠 기획 · 35장</p>
+            <h2 id="projects-h">2. 프로젝트</h2>
+            <p>교내 팀 프로젝트</p>
           </div>
         </div>
 
-        <div class="case-lead">
-          <div>
-            <p class="kicker">ETERNAL RETURN</p>
-            <h3 class="case-title">이터널 리턴 분석 &amp; 제안서</h3>
-            <p class="case-quote">개입은 두되, 예측하고 복구할 수 있게</p>
-            <div class="case-meta">
-              <div><span class="meta-label">주제</span><span>안전지대 / 제3자 개입, 루트 고착화, 상자 / 보급 파밍</span></div>
-              <div><span class="meta-label">근거</span><span>공식 패치 노트, 공식 랭크 FAQ, 커뮤니티 사례</span></div>
-              <div><span class="meta-label">방식</span><span>문제 → 개발진의 시도 → 남은 문제 → 제안</span></div>
+        <article class="proj">
+          <dl class="proj-meta">
+            <div><dt>기간</dt><dd>2025.02 ~ 2025.10</dd></div>
+            <div><dt>팀 규모</dt><dd>7인 (기획 4 · 프로그래머 3)</dd></div>
+            <div><dt>내 역할</dt><dd>시스템·콘텐츠 기획, 모션·이펙트·UI 제작</dd></div>
+            <div><dt>사용 도구</dt><dd>Unity</dd></div>
+          </dl>
+          <div class="proj-main">
+            <div>
+              <h3 class="proj-title">PROJECT JUMPER</h3>
+              <p class="proj-sub">3D 플랫포머 · 교내 팀 프로젝트</p>
+              <h4>핵심 재미 · 성취감</h4>
+              <p>재미는 해냈다고 느끼는 순간 가장 크게 다가온다고 보고, 성취감 하나에 집중했습니다. 별 3개를 모두 얻는 것이 목표입니다.</p>
+              <div class="pillars">
+                <div class="pillar"><strong>① 장애물 돌파</strong>자동 장애물의 패턴을 읽고, 레버나 버튼을 찾아 수동 장애물을 열며 통과 방법을 직접 찾게 했습니다.</div>
+                <div class="pillar"><strong>② 별 획득</strong>별의 위치를 알려 주지 않고, 표지판과 특이 발판을 단서로 직접 찾게 했습니다.</div>
+              </div>
+              <h4>나의 작업</h4>
+              <ul class="bullets">
+                <li>조작·점프: 점프를 모든 행동의 기본 조작으로 두고, 점프 높이, 체공 시간, 이동 속도를 직접 조정</li>
+                <li>획득 요소: 별 3개를 탐험의 목표로 두고 배치 설계</li>
+                <li>모션·이펙트·UI: 점프, 착지, 별 획득이 화면에서 바로 읽히도록 직접 제작, 별 개수·체력·남은 시간 UI</li>
+                <li>수치와 동작은 프로그래머와 협의하며 플레이로 확인</li>
+              </ul>
+              <h4>결과 · 배운 점</h4>
+              <p>지스타 출품을 목표로 플레이 가능한 프로토타입을 완성했고, 최종 심사는 통과하지 못했습니다.</p>
+              <blockquote class="quote">멀티가 가능하게 된다면 확실히 재미있고 경쟁력이 있을 것 같다<cite>지스타 출품 심사 피드백</cite></blockquote>
+              <p>여러 재미 요소를 구상했던 초기와 달리, 개발 과정에서 핵심 재미를 명확히 하고 집중하는 방향으로 기획을 수정했습니다.</p>
             </div>
-            <div class="btn-row">
-              <a class="btn btn-primary btn-sm" href="eternal-return.html">사례 연구 자세히 보기</a>
-              <a class="btn btn-ghost btn-sm" href="assets/documents/eternal-return-analysis.pdf" target="_blank" rel="noopener">PDF 열람</a>
-              <a class="btn btn-ghost btn-sm" href="assets/documents/eternal-return-analysis.pdf" download="이민용_이터널리턴_분석제안서.pdf">PDF 저장</a>
+            <div>
+              <button class="video" type="button" data-youtube="BYCzHyZhn0Q" data-title="PROJECT JUMPER 플레이 영상" aria-label="PROJECT JUMPER 플레이 영상 재생">
+                <img src="assets/images/jumper-proto.webp" width="1271" height="616" loading="lazy" decoding="async" alt="">
+                <span class="play"><svg viewBox="0 0 68 48" aria-hidden="true"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-3 .8-4.6 3.3-5.4 6.2C.1 13 0 24 0 24s.1 11 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c3-.8 4.6-3.3 5.4-6.2C67.9 35 68 24 68 24s-.1-11-1.5-16.3z" fill="#f00"/><path d="M45 24 27 14v20" fill="#fff"/></svg>플레이 영상 보기</span>
+              </button>
+              <div class="shots">
+                <figure class="figure"><img src="assets/images/jumper-work-jump.webp" width="707" height="850" loading="lazy" decoding="async" alt="조작·점프 작업 화면: 캐릭터가 발판 위를 점프하는 장면"><figcaption>조작 · 점프</figcaption></figure>
+                <figure class="figure"><img src="assets/images/jumper-work-star.webp" width="699" height="841" loading="lazy" decoding="async" alt="획득 요소 작업 화면: 높은 곳에 배치된 별"><figcaption>획득 요소</figcaption></figure>
+                <figure class="figure"><img src="assets/images/jumper-work-ui.webp" width="471" height="567" loading="lazy" decoding="async" alt="모션·이펙트·UI 작업 화면: 착지 이펙트와 화면 UI"><figcaption>모션 · 이펙트 · UI</figcaption></figure>
+              </div>
             </div>
           </div>
-          <figure class="figure">
-            <a href="assets/images/er-01.webp" target="_blank" rel="noopener"><img src="assets/images/er-01.webp" width="1600" height="900" loading="lazy" decoding="async" alt="이터널 리턴 분석 & 제안서 표지. 부제: 개입은 두되, 예측하고 복구할 수 있게"></a>
-          </figure>
-        </div>
-
-        <ol class="steps">
-          <li class="step step-problem">
-            <div class="step-body">
-              <span class="step-num">01</span>
-              <p class="step-label">문제</p>
-              <p class="step-line">제3자 개입 자체는 배틀로얄의 재미다. <mark>예측·대응할 수 없는 개입으로 입은 손해를 한 판 내내 복구하지 못하는 것</mark>이 문제다.</p>
-            </div>
-            <figure class="figure"><a href="assets/images/er-07.webp" target="_blank" rel="noopener"><img src="assets/images/er-07.webp" width="1600" height="900" loading="lazy" decoding="async" alt="7쪽 1.1 문제 정의: 문제 삼지 않는 것(제3자 개입 그 자체)과 문제 삼는 것(대응 수단 부족, 손해 복구 불가, 순위 방어 위주 플레이) 비교"></a></figure>
-          </li>
-          <li class="step">
-            <div class="step-body">
-              <span class="step-num">02</span>
-              <p class="step-label">근거</p>
-              <p class="step-line">패치 노트로 4차 개편(1.4 ~ 12.5)을 정리하니, 대응은 <mark>개입 빈도와 개입 직후</mark>에 집중되어 있었다.</p>
-            </div>
-            <figure class="figure"><a href="assets/images/er-10.webp" target="_blank" rel="noopener"><img src="assets/images/er-10.webp" width="1600" height="900" loading="lazy" decoding="async" alt="10쪽 1.2 개편 계보: 공간/시간 설계, 인지/보상, 분산/가속, 규칙 교체로 이어진 4차 시도 타임라인"></a></figure>
-          </li>
-          <li class="step">
-            <div class="step-body">
-              <span class="step-num">03</span>
-              <p class="step-label">제안</p>
-              <p class="step-line">개입은 그대로 두고 비어 있는 축을 메운다. <mark>A 접근 경고 → B 손해 복구 보정 → C 점수 구조 검토</mark> 순서.</p>
-            </div>
-            <figure class="figure"><a href="assets/images/er-20.webp" target="_blank" rel="noopener"><img src="assets/images/er-20.webp" width="1600" height="900" loading="lazy" decoding="async" alt="20쪽 1.3 제안 비교: 제안 A, B, C의 메우려는 빈 축, 기존 장치와의 관계, 주요 리스크, 관련 유저 사례 표"></a></figure>
-          </li>
-          <li class="step">
-            <div class="step-body">
-              <span class="step-num">04</span>
-              <p class="step-label">한계와 검증 계획</p>
-              <p class="step-line">커뮤니티 사례 3건은 통계가 아니다. <mark>시작 인원 기록과 패치 전후 공개 지표</mark>로 다시 확인한다.</p>
-            </div>
-            <figure class="figure"><a href="assets/images/er-34.webp" target="_blank" rel="noopener"><img src="assets/images/er-34.webp" width="1600" height="900" loading="lazy" decoding="async" alt="34쪽 한계와 검증 계획: 사례 수의 한계, 반대 의견 미포함 등 한계와 시작 인원 기록, 공개 지표 조사 등 검증 계획"></a></figure>
-          </li>
-        </ol>
+        </article>
       </div>
     </section>
 
@@ -138,10 +135,36 @@
         <div class="section-head">
           <div>
             <h2 id="docs-h">3. 기획서</h2>
-            <p>로스트아크 분석 기반 기획서 2종</p>
+            <p>분석 &amp; 제안서 1종, 로스트아크 기반 기획서 2종</p>
           </div>
         </div>
-        <div class="doc-grid">
+        <div class="doc-grid three">
+          <article class="doc-card doc-blue">
+            <div class="doc-band"></div>
+            <div class="doc-thumbs">
+              <a href="eternal-return.html"><img src="assets/images/er-01.webp" width="1600" height="900" loading="lazy" decoding="async" alt="이터널 리턴 분석 & 제안서 표지"></a>
+              <a href="assets/images/er-05.webp" target="_blank" rel="noopener"><img src="assets/images/er-05.webp" width="1600" height="900" loading="lazy" decoding="async" alt="본문 5쪽 한 장 요약: 세 파트의 문제, 개발진의 시도, 제안"></a>
+            </div>
+            <div class="doc-body">
+              <p class="doc-type">콘텐츠 기획 · 분석 &amp; 제안서 · 35장</p>
+              <h3 class="doc-title">이터널 리턴 분석 &amp; 제안서</h3>
+              <ul class="tags" role="list"><li>제3자 개입</li><li>루트 고착화</li><li>상자 / 보급 파밍</li><li>패치 노트 분석</li></ul>
+              <div class="doc-key">
+                <span class="meta-label">핵심 관점</span>
+                <p>개입은 두되, 예측하고 복구할 수 있게</p>
+              </div>
+              <ul class="bullets">
+                <li>예측·대응할 수 없는 개입으로 입은 손해를 한 판 내내 복구하지 못하는 것을 문제로 정의</li>
+                <li>패치 노트, 공식 랭크 FAQ, 커뮤니티 사례를 근거로 4차 개편을 정리하고 개선안 제안</li>
+              </ul>
+              <div class="btn-row">
+                <a class="btn btn-primary btn-sm" href="eternal-return.html">사례 연구 보기</a>
+                <a class="btn btn-ghost btn-sm" href="assets/documents/eternal-return-analysis.pdf" target="_blank" rel="noopener">PDF 열람</a>
+                <a class="btn btn-ghost btn-sm" href="assets/documents/eternal-return-analysis.pdf" download="이민용_이터널리턴_분석제안서.pdf">PDF 저장</a>
+              </div>
+            </div>
+          </article>
+
           <article class="doc-card doc-mint">
             <div class="doc-band"></div>
             <div class="doc-thumbs">
@@ -195,58 +218,15 @@
       </div>
     </section>
 
-    <!-- 4. 프로젝트 & 툴 -->
-    <section class="section" id="projects" aria-labelledby="projects-h">
+    <!-- 4. AI 활용 -->
+    <section class="section" id="ai" aria-labelledby="ai-h">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <h2 id="projects-h">4. 프로젝트 &amp; 툴</h2>
-            <p>팀 프로젝트와 직접 만든 개인 툴</p>
+            <h2 id="ai-h">4. AI 활용</h2>
+            <p>AI로 직접 만든 개인 툴</p>
           </div>
         </div>
-
-        <article class="proj">
-          <dl class="proj-meta">
-            <div><dt>기간</dt><dd>2025.02 ~ 2025.10</dd></div>
-            <div><dt>팀 규모</dt><dd>7인 (기획 4 · 프로그래머 3)</dd></div>
-            <div><dt>내 역할</dt><dd>시스템·콘텐츠 기획, 모션·이펙트·UI 제작</dd></div>
-            <div><dt>사용 도구</dt><dd>Unity</dd></div>
-          </dl>
-          <div class="proj-main">
-            <div>
-              <h3 class="proj-title">PROJECT JUMPER</h3>
-              <p class="proj-sub">3D 플랫포머 · 교내 팀 프로젝트</p>
-              <h4>핵심 재미 · 성취감</h4>
-              <p>재미는 해냈다고 느끼는 순간 가장 크게 다가온다고 보고, 성취감 하나에 집중했습니다. 별 3개를 모두 얻는 것이 목표입니다.</p>
-              <div class="pillars">
-                <div class="pillar"><strong>① 장애물 돌파</strong>자동 장애물의 패턴을 읽고, 레버나 버튼을 찾아 수동 장애물을 열며 통과 방법을 직접 찾게 했습니다.</div>
-                <div class="pillar"><strong>② 별 획득</strong>별의 위치를 알려 주지 않고, 표지판과 특이 발판을 단서로 직접 찾게 했습니다.</div>
-              </div>
-              <h4>나의 작업</h4>
-              <ul class="bullets">
-                <li>조작·점프: 점프를 모든 행동의 기본 조작으로 두고, 점프 높이, 체공 시간, 이동 속도를 직접 조정</li>
-                <li>획득 요소: 별 3개를 탐험의 목표로 두고 배치 설계</li>
-                <li>모션·이펙트·UI: 점프, 착지, 별 획득이 화면에서 바로 읽히도록 직접 제작, 별 개수·체력·남은 시간 UI</li>
-                <li>수치와 동작은 프로그래머와 협의하며 플레이로 확인</li>
-              </ul>
-              <h4>결과 · 배운 점</h4>
-              <p>지스타 출품을 목표로 플레이 가능한 프로토타입을 완성했고, 최종 심사는 통과하지 못했습니다.</p>
-              <blockquote class="quote">멀티가 가능하게 된다면 확실히 재미있고 경쟁력이 있을 것 같다<cite>지스타 출품 심사 피드백</cite></blockquote>
-              <p>여러 재미 요소를 구상했던 초기와 달리, 개발 과정에서 핵심 재미를 명확히 하고 집중하는 방향으로 기획을 수정했습니다.</p>
-            </div>
-            <div>
-              <button class="video" type="button" data-youtube="BYCzHyZhn0Q" data-title="PROJECT JUMPER 플레이 영상" aria-label="PROJECT JUMPER 플레이 영상 재생">
-                <img src="assets/images/jumper-proto.webp" width="1271" height="616" loading="lazy" decoding="async" alt="">
-                <span class="play"><svg viewBox="0 0 68 48" aria-hidden="true"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-3 .8-4.6 3.3-5.4 6.2C.1 13 0 24 0 24s.1 11 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c3-.8 4.6-3.3 5.4-6.2C67.9 35 68 24 68 24s-.1-11-1.5-16.3z" fill="#f00"/><path d="M45 24 27 14v20" fill="#fff"/></svg>플레이 영상 보기</span>
-              </button>
-              <div class="shots">
-                <figure class="figure"><img src="assets/images/jumper-work-jump.webp" width="707" height="850" loading="lazy" decoding="async" alt="조작·점프 작업 화면: 캐릭터가 발판 위를 점프하는 장면"><figcaption>조작 · 점프</figcaption></figure>
-                <figure class="figure"><img src="assets/images/jumper-work-star.webp" width="699" height="841" loading="lazy" decoding="async" alt="획득 요소 작업 화면: 높은 곳에 배치된 별"><figcaption>획득 요소</figcaption></figure>
-                <figure class="figure"><img src="assets/images/jumper-work-ui.webp" width="471" height="567" loading="lazy" decoding="async" alt="모션·이펙트·UI 작업 화면: 착지 이펙트와 화면 UI"><figcaption>모션 · 이펙트 · UI</figcaption></figure>
-              </div>
-            </div>
-          </div>
-        </article>
 
         <article class="proj">
           <dl class="proj-meta">
@@ -274,6 +254,11 @@
                 <li>실제 스크린샷으로 검증셋을 만들어 인식 정확도 측정 (검증 42칸 중 41칸)</li>
                 <li>지인 3명에게 테스트를 요청했고, 현재도 직접 사용 중</li>
               </ul>
+              <h4>AI 활용과 역할 분담</h4>
+              <div class="roles">
+                <div class="role"><strong>나</strong>문제 정의와 기능 설계, 판단 기준과 통계 범위 결정, 기능 추가 순서 결정, 검증셋 구축 지시, 지인 테스트 요청과 직접 사용</div>
+                <div class="role"><strong>AI</strong>Claude Code: 프로그램 구현<br>ChatGPT: 자료 조사, 통계 분석<br>결과물 확인과 수정은 직접 판단</div>
+              </div>
               <h4>다음 계획</h4>
               <p>현재는 PC 미러링으로만 쓸 수 있어, 모바일 기기에서 바로 쓸 수 있는 앱으로 확장할 계획입니다.</p>
             </div>
@@ -288,13 +273,13 @@
       </div>
     </section>
 
-    <!-- 5. 도구와 AI 활용 -->
+    <!-- 5. 도구 활용 -->
     <section class="section section-alt" id="tools" aria-labelledby="tools-h">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <h2 id="tools-h">5. 도구와 AI 활용</h2>
-            <p>실제로 작업에 쓴 도구와 한 일</p>
+            <h2 id="tools-h">5. 도구 활용</h2>
+            <p>엔진과 툴로 직접 해 본 작업</p>
           </div>
         </div>
         <ul class="chips" role="list" aria-label="보유 도구">
@@ -337,27 +322,6 @@
               <p class="gain"><span class="meta-label">얻은 점</span><br>캐릭터 디자인이 실제 3D 리소스로 구현되는 과정 체감</p>
             </div>
           </article>
-        </div>
-        <div class="ai-box">
-          <div>
-            <h3>AI 활용</h3>
-            <p class="note">포켓몬챔피언스 배틀 보조 도구 제작 기준</p>
-          </div>
-          <div>
-            <h4>AI가 한 일</h4>
-            <ul class="bullets">
-              <li>Claude Code: 프로그램 구현</li>
-              <li>ChatGPT: 자료 조사, 통계 분석</li>
-            </ul>
-          </div>
-          <div>
-            <h4>내가 한 일</h4>
-            <ul class="bullets">
-              <li>문제 정의와 기능 설계, 판단 기준과 통계 범위 결정</li>
-              <li>기능 추가 순서 결정, 검증셋 구축 지시</li>
-              <li>결과물 확인과 수정 판단, 지인 테스트 요청</li>
-            </ul>
-          </div>
         </div>
       </div>
     </section>
