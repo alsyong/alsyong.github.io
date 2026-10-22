@@ -207,7 +207,8 @@ p { margin: 0; }
 .step-num { font-size: 40px; font-weight: 900; line-height: 1; color: var(--c-num, var(--c)); }
 .step-label { margin-top: 8px; font-size: 18px; font-weight: 700; }
 .step-line { margin-top: 8px; font-size: 18px; font-weight: 500; line-height: 1.55; }
-.step-line mark { background: var(--mark-bg); color: inherit; padding: 0 2px; font-weight: 700; }
+.step-line mark { --hl: rgba(255, 196, 0, 0.42); background: linear-gradient(transparent 38%, var(--hl) 38%, var(--hl) 92%, transparent 92%); color: var(--text); padding: 0 2px; margin: 0 -2px; font-weight: 800; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+html[data-theme="light"] .step-line mark { --hl: #ffe066; }
 .step .figure { border: 0; border-radius: 0; border-top: 1px solid var(--line); }
 .step-problem { --c: var(--er-red); --c-num: var(--red-num); }
 @media (min-width: 720px) { .steps { grid-template-columns: 1fr 1fr; } }
@@ -450,7 +451,6 @@ html[data-theme="light"] {
 .hero-role::before { background: var(--brand); }
 .hero-title em { color: var(--accent-text); }
 .stage-n, .bt-steps span { background: var(--brand); }
-.step-line mark { background: var(--brand-tint); }
 .score-bar i { background: var(--brand); }
 .rank-tab[aria-selected="true"] { background: var(--brand); border-color: var(--brand); }
 .doc-blue { --c: var(--brand); --c-soft: var(--brand-tint); --c-text: var(--accent-text); }
