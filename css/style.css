@@ -523,7 +523,7 @@ html[data-theme="light"] {
 /* =====================================================================
    후킹: 첫 화면 증거 카드 · 이터널 리턴 질문형 도입 · 배틀 보조 시연
    ===================================================================== */
-.hero-title .hl { background: linear-gradient(transparent 62%, var(--brand-tint) 62%); padding: 0 2px; }
+.hero-title .hl { color: var(--accent-text); }
 .hero-proof { margin-top: 32px; display: grid; gap: 12px; max-width: 720px; }
 @media (min-width: 640px) { .hero-proof { grid-template-columns: 1fr 1fr; } }
 .proof { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px; text-decoration: none; color: var(--text);
@@ -577,5 +577,5 @@ html[data-theme="light"] {
 .demo-lead strong { color: var(--text); }
 .demo-cta { margin-top: 20px; min-height: 54px; width: 100%; font-size: 17px; }
 .demo-side .note { margin-top: 8px; }
-.hero-title .hl { background: none; padding: 0; text-decoration: underline; text-decoration-color: var(--brand); text-decoration-thickness: 6px; text-underline-offset: 8px; text-decoration-skip-ink: none; }
+.hero-title .hl { background: none; padding: 0; color: var(--accent-text); }
 .demo-name { font-size: 16px; font-weight: 700; color: var(--accent-text); margin-bottom: 8px; }
