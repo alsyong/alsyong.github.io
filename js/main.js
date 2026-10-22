@@ -170,3 +170,19 @@ document.querySelectorAll('[data-youtube]').forEach(function (box) {
     });
   }, { threshold: 0.4 }).observe(v);
 })();
+
+// 프로젝트 플레이 클립: GIF처럼 소리 없이 반복, 화면에 보일 때만 재생, 움직임 줄이기 설정이면 정지 화면
+(function () {
+  var clips = document.querySelectorAll('.loop-clip');
+  if (!clips.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function play(v) { if (v.preload === 'none') v.preload = 'auto'; v.play().catch(function () {}); }
+  if (!('IntersectionObserver' in window)) { clips.forEach(play); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) play(e.target);
+      else if (!e.target.paused) e.target.pause();
+    });
+  }, { threshold: 0.25 });
+  clips.forEach(function (v) { io.observe(v); });
+})();
