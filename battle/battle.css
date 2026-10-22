@@ -154,3 +154,11 @@ select { appearance: auto; }
 .bt-foot a { color: inherit; }
 .theme-toggle { flex: none; }
 @media (max-width: 599px) { .vs summary .chev { display: none; } }
+/* 디자인 2차와 맞춤: 헤더 선은 버튼까지 한 줄로, 카드는 각지게 */
+.bt-sec-head { position: relative; border-top: 1px solid var(--line); padding-top: 34px; }
+.bt-sec-head .section-head { border-top: 0; padding-top: 0; position: static; }
+.bt-sec-head .section-head::after { top: 10px; }
+.slot, .opp, .res-card, .vs, .pick, .lead-box, .editor, .pk-icon, .ed-icon, .combo-list, .loading-box, .warn-box,
+input[type="text"], .combo input, select, .ap-cell input, .ed-x { border-radius: var(--r); }
+.rank-tab, .bt-engine { border-radius: var(--r); }
+.slot .s-moves span { border-radius: 2px; }

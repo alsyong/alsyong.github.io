@@ -420,3 +420,102 @@ html.lb-lock { overflow: hidden; }
   .lb-stage { padding: 8px; }
   .lb-nav { top: auto; bottom: 74px; transform: none; width: 44px; height: 52px; font-size: 32px; }
 }
+
+/* =====================================================================
+   디자인 2차: 대표 색(이터널 리턴 남색) 통일 · PPT 헤더 규칙 · 문서형 각진 카드
+   ===================================================================== */
+:root {
+  --brand: #0b5d84;          /* 이터널 리턴 남색: 채움(버튼, 막대, 번호) */
+  --brand-strong: #0e76a8;   /* 버튼 hover */
+  --accent-text: #6fb7dc;    /* 어두운 바탕 위 남색 계열 글자 */
+  --brand-tint: rgba(11, 93, 132, 0.18);
+  --r: 4px;                  /* 각진 모서리 */
+  --line-strong: #3a4049;
+}
+html[data-theme="light"] {
+  --accent-text: #0b5d84;
+  --brand-tint: #e6f0f5;
+  --line-strong: #c9ced6;
+}
+
+/* 버튼·강조를 같은 남색으로 */
+.btn { border-radius: var(--r); }
+.btn-primary, .case .btn-primary { background: var(--brand); border-color: var(--brand); color: #fff; }
+.btn-primary:hover { background: var(--brand-strong); border-color: var(--brand-strong); }
+.hero-role, .df-quote, .big-line em, .df-conclusion em, .summary-card h3 { color: var(--accent-text); }
+.hero-role::before { background: var(--brand); }
+.hero-title em { color: var(--accent-text); }
+.stage-n, .bt-steps span { background: var(--brand); }
+.step-line mark { background: var(--brand-tint); }
+.score-bar i { background: var(--brand); }
+.rank-tab[aria-selected="true"] { background: var(--brand); border-color: var(--brand); }
+.doc-blue { --c: var(--brand); --c-soft: var(--brand-tint); --c-text: var(--accent-text); }
+
+/* PPT 헤더 규칙: 상단 가는 선 + 작은 문서명, 세로 막대 + "N. 제목" */
+.section { padding: 80px 0; }
+.section-head { position: relative; margin-bottom: 36px; padding-top: 34px; border-top: 1px solid var(--line); gap: 14px; }
+.section-head::before { width: 8px; border-radius: 0; background: var(--brand); }
+.section-head::after { content: "이민용 · Game Design Portfolio"; position: absolute; top: 10px; left: 0; font-size: 13px; font-weight: 300; letter-spacing: 0.02em; color: var(--text-muted); }
+.section-head h2 { font-size: clamp(28px, 4.6vw, 38px); font-weight: 800; letter-spacing: -0.015em; line-height: 1.2; }
+.section-head p { margin-top: 6px; font-size: 17px; }
+.contact .section-head::before { background: var(--brand); }
+
+/* 문서형 각진 카드 */
+.proj, .doc-feature, .doc-card, .tool, .step, .res-card, .summary-card, .fact,
+.pillar, .role, .stages li, .flow li, .df-mini, .vs, .opp, .slot, .lead-box,
+.figure, .video, .chips li, .warn-box, .loading-box, .editor, .combo-list,
+.hero-photo, .profile-card, .quote, .doc-key { border-radius: var(--r); }
+.tags li { border-radius: 2px; }
+.proj, .doc-feature, .tool { border-color: var(--line-strong); }
+.doc-feature .doc-band, .doc-card .doc-band { height: 6px; }
+.proj-meta { border-bottom-color: var(--line-strong); }
+.proj-meta div { padding: 14px 18px; }
+.proj-meta dt { font-size: 14px; letter-spacing: 0.02em; }
+.pillar, .role { background: var(--bg-soft); }
+.stages li { background: var(--bg-soft); }
+.flow li { background: var(--bg-soft); }
+.chips li { border-color: var(--line-strong); }
+.df-sub::before { width: 6px; border-radius: 0; background: var(--c, var(--brand)); }
+.step-body { border-top-width: 6px; }
+.quote { border-left-width: 6px; border-left-color: var(--brand); }
+
+/* 첫 화면: 프로필 카드(사진 + 연락처) */
+.hero { padding: 64px 0 72px; }
+.profile-card { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line-strong); overflow: hidden; }
+.profile-card .hero-photo { width: 100%; aspect-ratio: 4 / 4.2; border: 0; border-radius: 0; border-bottom: 1px solid var(--line-strong); order: 0; }
+.profile-card .hero-photo img { object-position: center 20%; }
+.pc-body { padding: 16px 18px 18px; }
+.pc-name { font-size: 22px; font-weight: 800; }
+.pc-role { margin-top: 2px; font-size: 15px; color: var(--text-muted); }
+.pc-contact { list-style: none; margin: 14px 0 0; padding: 12px 0 0; border-top: 1px dashed var(--line); display: grid; gap: 8px; }
+.pc-contact a { display: flex; align-items: center; gap: 10px; text-decoration: none; font-size: 16px; font-weight: 500; color: var(--text); word-break: break-all; }
+.pc-contact a:hover span { text-decoration: underline; }
+.pc-contact svg { width: 18px; height: 18px; flex: none; color: var(--accent-text); }
+@media (min-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr 300px; gap: 64px; align-items: center; }
+  .profile-card .hero-photo { width: 100%; }
+}
+@media (max-width: 899px) {
+  .profile-card { order: 2; display: grid; grid-template-columns: 112px 1fr; align-items: center; }
+  .profile-card .hero-photo { width: 112px; height: 100%; aspect-ratio: auto; border-bottom: 0; border-right: 1px solid var(--line-strong); }
+  .pc-body { padding: 12px 14px; }
+  .pc-name { font-size: 19px; }
+  .pc-role { font-size: 14px; }
+  .pc-contact { margin-top: 8px; padding-top: 8px; gap: 6px; }
+  .pc-contact a { font-size: 15px; }
+}
+.hero-name { display: none; } /* 이름은 프로필 카드에서 보여 준다 */
+.proj-meta { margin: 0; }
+.pc-name span { font-size: 16px; font-weight: 300; color: var(--text-muted); margin-left: 4px; }
+.pc-role { font-size: 16px; }
+.pc-contact a { word-break: keep-all; overflow-wrap: normal; }
+@media (max-width: 899px) {
+  .profile-card { grid-template-columns: 96px 1fr; grid-template-rows: auto auto; }
+  .profile-card .hero-photo { width: 96px; height: 120px; grid-row: 1; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+  .pc-body { display: contents; }
+  .pc-name, .pc-role { grid-column: 2; padding: 0 14px; }
+  .pc-name { grid-row: 1; align-self: start; margin-top: 30px; }
+  .pc-role { grid-row: 1; align-self: start; margin-top: 62px; font-size: 15px; }
+  .pc-contact { grid-column: 1 / -1; grid-row: 2; margin: 0; padding: 12px 14px 14px; border-top: 0; }
+  .pc-contact a { font-size: 16px; }
+}
