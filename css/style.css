@@ -343,3 +343,48 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 @media (min-width: 600px) { .roles { grid-template-columns: 1fr 1fr; } }
 .role { border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
 .role strong { display: block; font-weight: 700; margin-bottom: 4px; }
+
+/* ===== 기획서: 넓게 펼친 카드 ===== */
+.doc-feature { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.doc-feature + .doc-feature { margin-top: 32px; }
+.doc-feature .doc-band { height: 8px; background: var(--c); }
+.df-inner { padding: 24px 20px 28px; }
+@media (min-width: 900px) { .df-inner { padding: 36px 40px 40px; } }
+.df-head { display: grid; gap: 24px; align-items: center; }
+@media (min-width: 900px) { .df-head { grid-template-columns: 1fr 1fr; gap: 40px; } }
+.df-head .btn-row { margin-top: 22px; }
+.df-title { margin-top: 6px; font-size: clamp(24px, 4vw, 32px); font-weight: 800; letter-spacing: -0.01em; }
+.df-quote { margin-top: 10px; font-size: clamp(19px, 3vw, 24px); font-weight: 600; color: var(--accent-text); line-height: 1.45; }
+.df-sub { margin: 40px 0 16px; font-size: 19px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.df-sub::before { content: ""; width: 4px; height: 18px; border-radius: 2px; background: var(--c); }
+.doc-feature .step { background: var(--bg-soft); }
+.df-pair { display: grid; gap: 16px; }
+@media (min-width: 900px) { .df-pair { grid-template-columns: 1fr 1fr; } }
+.df-mini { display: grid; gap: 12px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 14px; }
+.df-mini h4 { font-size: 18px; font-weight: 700; }
+.df-mini p { margin-top: 4px; }
+.df-conclusion { margin-top: 32px; font-size: clamp(20px, 3.4vw, 26px); font-weight: 800; line-height: 1.45; }
+.df-conclusion em { font-style: normal; color: var(--accent-text); }
+.df-split { display: grid; gap: 28px; }
+@media (min-width: 960px) { .df-split { grid-template-columns: 0.9fr 1.1fr; gap: 40px; align-items: start; } }
+.df-text .tags { margin-top: 12px; }
+.df-text .doc-key { margin-top: 16px; }
+.df-text h4 { margin-top: 20px; font-size: 17px; font-weight: 700; }
+.df-text .bullets { margin-top: 6px; }
+.df-text .btn-row { margin-top: 24px; }
+.df-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.df-gallery .df-main { grid-column: 1 / -1; }
+.doc-feature .doc-type { font-size: 16px; font-weight: 700; color: var(--c-text); }
+
+/* ===== 엔진 & 툴: 칸 높이 맞추기 (subgrid) ===== */
+.tool { display: grid; grid-row: span 4; grid-template-rows: subgrid; gap: 0; }
+.tool-fig { border: 0 !important; border-radius: 0 !important; }
+.tool-head { padding: 18px 18px 0; }
+.tool-list { margin: 10px 0 0; padding: 0 18px 0 calc(18px + 1.1em); }
+.tool .gain { margin: 14px 18px 18px; padding-top: 12px; border-top: 1px dashed var(--line); }
+@media (min-width: 900px) { .tool-grid { grid-template-rows: auto auto auto auto; } }
+
+/* ===== 마무리 인사 + 연락처 ===== */
+.thanks { font-size: clamp(30px, 6vw, 52px); font-weight: 900; letter-spacing: -0.02em; line-height: 1.25; }
+.thanks-sub { margin-top: 10px; color: #b9bec6; font-size: 18px; margin-bottom: 40px; }
+.doc-blue .step:not(.step-problem) { --c-num: var(--accent-text); }

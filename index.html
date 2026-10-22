@@ -34,7 +34,7 @@
           <a href="#projects">프로젝트</a>
           <a href="#docs">기획서</a>
           <a href="#ai">AI 활용</a>
-          <a href="#tools">도구</a>
+          <a href="#tools">엔진 &amp; 툴</a>
           <a href="#contact">연락처</a>
         </nav>
         <button class="theme-toggle" type="button" aria-label="밝은 테마로 바꾸기" title="테마 바꾸기">
@@ -62,11 +62,6 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg>
             </a>
           </div>
-          <ul class="hero-facts" role="list">
-            <li class="fact"><span class="fact-num">3종</span><span class="fact-label">기획·분석 문서</span></li>
-            <li class="fact"><span class="fact-num">7인</span><span class="fact-label">팀 프로젝트 JUMPER</span></li>
-            <li class="fact"><span class="fact-num">44단계+</span><span class="fact-label">개인 툴 기능 추가 기록</span></li>
-          </ul>
         </div>
         <div class="hero-photo">
           <img src="assets/images/profile.webp" width="400" height="500" alt="이민용 프로필 사진">
@@ -138,49 +133,113 @@
             <p>분석 &amp; 제안서 1종, 로스트아크 기반 기획서 2종</p>
           </div>
         </div>
-        <div class="doc-grid three">
-          <article class="doc-card doc-blue">
-            <div class="doc-band"></div>
-            <div class="doc-thumbs">
-              <a href="eternal-return.html"><img src="assets/images/er-01.webp" width="1600" height="900" loading="lazy" decoding="async" alt="이터널 리턴 분석 & 제안서 표지"></a>
-              <a href="assets/images/er-05.webp" target="_blank" rel="noopener"><img src="assets/images/er-05.webp" width="1600" height="900" loading="lazy" decoding="async" alt="본문 5쪽 한 장 요약: 세 파트의 문제, 개발진의 시도, 제안"></a>
-            </div>
-            <div class="doc-body">
-              <p class="doc-type">콘텐츠 기획 · 분석 &amp; 제안서 · 35장</p>
-              <h3 class="doc-title">이터널 리턴 분석 &amp; 제안서</h3>
-              <ul class="tags" role="list"><li>제3자 개입</li><li>루트 고착화</li><li>상자 / 보급 파밍</li><li>패치 노트 분석</li></ul>
-              <div class="doc-key">
-                <span class="meta-label">핵심 관점</span>
-                <p>개입은 두되, 예측하고 복구할 수 있게</p>
-              </div>
-              <ul class="bullets">
-                <li>예측·대응할 수 없는 개입으로 입은 손해를 한 판 내내 복구하지 못하는 것을 문제로 정의</li>
-                <li>패치 노트, 공식 랭크 FAQ, 커뮤니티 사례를 근거로 4차 개편을 정리하고 개선안 제안</li>
-              </ul>
-              <div class="btn-row">
-                <a class="btn btn-primary btn-sm" href="eternal-return.html">사례 연구 보기</a>
-                <a class="btn btn-ghost btn-sm" href="assets/documents/eternal-return-analysis.pdf" target="_blank" rel="noopener">PDF 열람</a>
-                <a class="btn btn-ghost btn-sm" href="assets/documents/eternal-return-analysis.pdf" download="이민용_이터널리턴_분석제안서.pdf">PDF 저장</a>
-              </div>
-            </div>
-          </article>
 
-          <article class="doc-card doc-mint">
-            <div class="doc-band"></div>
-            <div class="doc-thumbs">
-              <a href="assets/images/ai-01.webp" target="_blank" rel="noopener"><img src="assets/images/ai-01.webp" width="1600" height="900" loading="lazy" decoding="async" alt="일반 몬스터 범용 AI 기획서 표지"></a>
-              <a href="assets/images/ai-04.webp" target="_blank" rel="noopener"><img src="assets/images/ai-04.webp" width="1600" height="900" loading="lazy" decoding="async" alt="본문 4쪽 FSM 구조: 대기, 추격, 공격, 복귀, 이상, 사망 상태와 전이 조건 표"></a>
+        <!-- 3-1 이터널 리턴 -->
+        <article class="doc-feature doc-blue" id="eternal-return" aria-labelledby="er-h">
+          <div class="doc-band"></div>
+          <div class="df-inner">
+            <div class="df-head">
+              <div>
+                <p class="doc-type">콘텐츠 기획 · 분석 &amp; 제안서 · 35장</p>
+                <h3 class="df-title" id="er-h">이터널 리턴 분석 &amp; 제안서</h3>
+                <p class="df-quote">개입은 두되, 예측하고 복구할 수 있게</p>
+                <div class="case-meta">
+                  <div><span class="meta-label">주제</span><span>안전지대 / 제3자 개입, 루트 고착화, 상자 / 보급 파밍</span></div>
+                  <div><span class="meta-label">근거</span><span>공식 패치 노트, 공식 랭크 FAQ, 커뮤니티 사례</span></div>
+                  <div><span class="meta-label">방식</span><span>문제 → 개발진의 시도 → 남은 문제 → 제안</span></div>
+                </div>
+                <div class="btn-row">
+                  <a class="btn btn-primary btn-sm" href="assets/documents/eternal-return-analysis.pdf" target="_blank" rel="noopener">PDF 열람</a>
+                  <a class="btn btn-ghost btn-sm" href="assets/documents/eternal-return-analysis.pdf" download="이민용_이터널리턴_분석제안서.pdf">PDF 저장</a>
+                </div>
+              </div>
+              <figure class="figure">
+                <a href="assets/images/er-01.webp" target="_blank" rel="noopener"><img src="assets/images/er-01.webp" width="1600" height="900" loading="lazy" decoding="async" alt="이터널 리턴 분석 & 제안서 표지. 부제: 개입은 두되, 예측하고 복구할 수 있게"></a>
+              </figure>
             </div>
-            <div class="doc-body">
+
+            <p class="df-sub">사례 연구 : 안전지대 / 제3자 개입</p>
+            <ol class="steps">
+              <li class="step step-problem">
+                <div class="step-body">
+                  <span class="step-num">01</span>
+                  <p class="step-label">문제</p>
+                  <p class="step-line">제3자 개입 자체는 배틀로얄의 재미다. <mark>예측·대응할 수 없는 개입으로 입은 손해를 한 판 내내 복구하지 못하는 것</mark>이 문제다.</p>
+                </div>
+                <figure class="figure"><a href="assets/images/er-07.webp" target="_blank" rel="noopener"><img src="assets/images/er-07.webp" width="1600" height="900" loading="lazy" decoding="async" alt="7쪽 1.1 문제 정의: 문제 삼지 않는 것(제3자 개입 그 자체)과 문제 삼는 것(대응 수단 부족, 손해 복구 불가, 순위 방어 위주 플레이) 비교"></a></figure>
+              </li>
+              <li class="step">
+                <div class="step-body">
+                  <span class="step-num">02</span>
+                  <p class="step-label">근거</p>
+                  <p class="step-line">패치 노트로 4차 개편(1.4 ~ 12.5)을 정리하니, 대응은 <mark>개입 빈도와 개입 직후</mark>에 집중되어 있었다.</p>
+                </div>
+                <figure class="figure"><a href="assets/images/er-10.webp" target="_blank" rel="noopener"><img src="assets/images/er-10.webp" width="1600" height="900" loading="lazy" decoding="async" alt="10쪽 1.2 개편 계보: 공간/시간 설계, 인지/보상, 분산/가속, 규칙 교체로 이어진 4차 시도 타임라인"></a></figure>
+              </li>
+              <li class="step">
+                <div class="step-body">
+                  <span class="step-num">03</span>
+                  <p class="step-label">제안</p>
+                  <p class="step-line">개입은 그대로 두고 비어 있는 축을 메운다. <mark>A 접근 경고 → B 손해 복구 보정 → C 점수 구조 검토</mark> 순서.</p>
+                </div>
+                <figure class="figure"><a href="assets/images/er-20.webp" target="_blank" rel="noopener"><img src="assets/images/er-20.webp" width="1600" height="900" loading="lazy" decoding="async" alt="20쪽 1.3 제안 비교: 제안 A, B, C의 메우려는 빈 축, 기존 장치와의 관계, 주요 리스크, 관련 유저 사례 표"></a></figure>
+              </li>
+              <li class="step">
+                <div class="step-body">
+                  <span class="step-num">04</span>
+                  <p class="step-label">한계와 검증 계획</p>
+                  <p class="step-line">커뮤니티 사례 3건은 통계가 아니다. <mark>시작 인원 기록과 패치 전후 공개 지표</mark>로 다시 확인한다.</p>
+                </div>
+                <figure class="figure"><a href="assets/images/er-34.webp" target="_blank" rel="noopener"><img src="assets/images/er-34.webp" width="1600" height="900" loading="lazy" decoding="async" alt="34쪽 한계와 검증 계획: 사례 수의 한계, 반대 의견 미포함 등 한계와 시작 인원 기록, 공개 지표 조사 등 검증 계획"></a></figure>
+              </li>
+            </ol>
+
+            <p class="df-sub">같은 방향의 두 제안</p>
+            <div class="df-pair">
+              <div class="df-mini">
+                <figure class="figure"><a href="assets/images/er-26.webp" target="_blank" rel="noopener"><img src="assets/images/er-26.webp" width="1600" height="900" loading="lazy" decoding="async" alt="26쪽 2.3 제안: 예고형 재료 변동"></a></figure>
+                <div>
+                  <h4>루트 고착화 : 예고형 재료 변동</h4>
+                  <p>판마다 일부 재료(예: 2~3종)의 생성 지역을 후보 안에서 바꾸고, 게임 시작 때 공개해 루트 화면에 반영한다.</p>
+                </div>
+              </div>
+              <div class="df-mini">
+                <figure class="figure"><a href="assets/images/er-31.webp" target="_blank" rel="noopener"><img src="assets/images/er-31.webp" width="1600" height="900" loading="lazy" decoding="async" alt="31쪽 3.3 제안: 보리 상자 획득 방식 고정 시간화"></a></figure>
+                <div>
+                  <h4>상자 / 보급 파밍 : 보리 상자 20초 고정 획득</h4>
+                  <p>획득 단계를 20초 고정 상호작용으로 바꿔 캐릭터 편차를 없애고, 노출 시간을 모두가 예측할 수 있게 한다.</p>
+                </div>
+              </div>
+            </div>
+            <p class="df-conclusion">세 파트의 공통 해법 : <em>예측 가능성, 복구 가능성, 다양성</em></p>
+          </div>
+        </article>
+
+        <!-- 3-2 일반 몬스터 범용 AI -->
+        <article class="doc-feature doc-mint" aria-labelledby="ai-doc-h">
+          <div class="doc-band"></div>
+          <div class="df-inner df-split">
+            <div class="df-text">
               <p class="doc-type">시스템 기획 · 16장</p>
-              <h3 class="doc-title">일반 몬스터 범용 AI 기획서</h3>
+              <h3 class="df-title" id="ai-doc-h">일반 몬스터 범용 AI 기획서</h3>
               <ul class="tags" role="list"><li>로스트아크 분석 기반</li><li>FSM</li><li>순서도</li><li>참조 테이블</li></ul>
               <div class="doc-key">
                 <span class="meta-label">설계 목표</span>
                 <p>플레이어가 복잡하게 느끼지 않으면서, 조정만으로 다른 MMORPG에도 쓸 수 있는 범용 AI</p>
               </div>
+              <h4>개요</h4>
+              <ul class="bullets">
+                <li>로스트아크의 일반 몬스터를 분석해, 대부분의 일반 몬스터에 공통으로 적용할 수 있는 범용 AI를 FSM으로 설계</li>
+                <li>엘리트, 네임드, 보스 등 특수 몬스터는 제외한 필드·던전 일반 몬스터 대상</li>
+              </ul>
+              <h4>핵심 설계</h4>
               <ul class="bullets">
                 <li>대기, 추격, 공격, 복귀, 이상, 사망 6개 상태와 전이 조건 정의</li>
+                <li>순찰(좌표·랜덤), 타겟 선정, 스킬 선정, 피격 연산을 순서도로 정리</li>
+                <li>상태마다 참조 테이블(변수명, 자료형, 설명)을 붙여 구현 기준 명시</li>
+              </ul>
+              <h4>설계 포인트</h4>
+              <ul class="bullets">
                 <li>사거리를 스킬별 값으로 두고 쿨타임, 마나와 함께 판정해 스킬 선정 조건을 하나로 정리</li>
               </ul>
               <div class="btn-row">
@@ -188,33 +247,52 @@
                 <a class="btn btn-ghost btn-sm" href="assets/documents/lostark-monster-ai.pdf" download="이민용_일반몬스터_범용AI_기획서.pdf">PDF 저장</a>
               </div>
             </div>
-          </article>
-
-          <article class="doc-card doc-gold">
-            <div class="doc-band"></div>
-            <div class="doc-thumbs">
-              <a href="assets/images/boss-01.webp" target="_blank" rel="noopener"><img src="assets/images/boss-01.webp" width="1600" height="900" loading="lazy" decoding="async" alt="보스 창작 기획서 표지"></a>
-              <a href="assets/images/boss-06.webp" target="_blank" rel="noopener"><img src="assets/images/boss-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="본문 6쪽 문제점 & 해결방안: 분열과 재결합, 망각 게이지를 기반으로 한 판단 중심 전투 구조"></a>
+            <div class="df-gallery">
+              <figure class="figure df-main"><a href="assets/images/ai-04.webp" target="_blank" rel="noopener"><img src="assets/images/ai-04.webp" width="1600" height="900" loading="lazy" decoding="async" alt="4쪽 FSM 구조: 대기, 추격, 공격, 복귀, 이상, 사망 상태와 전이 조건 표"></a><figcaption>4쪽 · FSM 구조와 전이 조건</figcaption></figure>
+              <figure class="figure"><a href="assets/images/ai-01.webp" target="_blank" rel="noopener"><img src="assets/images/ai-01.webp" width="1600" height="900" loading="lazy" decoding="async" alt="일반 몬스터 범용 AI 기획서 표지"></a><figcaption>표지</figcaption></figure>
+              <figure class="figure"><a href="assets/images/ai-11.webp" target="_blank" rel="noopener"><img src="assets/images/ai-11.webp" width="1600" height="900" loading="lazy" decoding="async" alt="11쪽 스킬 선정 연산 순서도와 몬스터·스킬 테이블"></a><figcaption>11쪽 · 스킬 선정 연산</figcaption></figure>
             </div>
-            <div class="doc-body">
+          </div>
+        </article>
+
+        <!-- 3-3 보스 창작 -->
+        <article class="doc-feature doc-gold" aria-labelledby="boss-doc-h">
+          <div class="doc-band"></div>
+          <div class="df-inner df-split">
+            <div class="df-text">
               <p class="doc-type">콘텐츠 기획 · 21장</p>
-              <h3 class="doc-title">보스 창작 기획서</h3>
+              <h3 class="df-title" id="boss-doc-h">보스 창작 기획서</h3>
               <ul class="tags" role="list"><li>로스트아크 레이드</li><li>보스 창작</li><li>망각 게이지</li><li>스킬 상세</li></ul>
               <div class="doc-key">
                 <span class="meta-label">핵심 재미</span>
                 <p>패턴 암기 대신, 조각 상태와 게이지를 보고 전투 흐름에 직접 개입하는 재미</p>
               </div>
+              <h4>기획 의도</h4>
               <ul class="bullets">
-                <li>기존 군단장 레이드의 패턴 암기와 반복 수행 비중에 주목</li>
-                <li>보스를 분열, 재결합 구조로 만들고 망각 게이지를 두어 매 전투가 다르게 전개되도록 설계</li>
+                <li>플레이어가 전투 흐름을 스스로 만들어가는 능동적인 플레이 경험</li>
+                <li>매 전투가 다르게 전개되는 가변적인 전투 환경</li>
+              </ul>
+              <h4>문제 → 해결</h4>
+              <ul class="bullets">
+                <li>기존 군단장 레이드는 패턴 암기와 반복 수행이 중요하게 작용하는 점에 주목</li>
+                <li>보스를 분열, 재결합 구조로 만들고 망각 게이지를 두어, 조각 상태와 게이지를 보고 전투 상황을 판단해 흐름에 개입하도록 설계</li>
+              </ul>
+              <h4>문서 구성</h4>
+              <ul class="bullets">
+                <li>보스 외형, 전투 컨셉, 핵심 시스템(망각 게이지, 페이즈별 난이도), 보유 스킬과 스킬 상세</li>
               </ul>
               <div class="btn-row">
                 <a class="btn btn-ghost btn-sm" href="assets/documents/lostark-boss-design.pdf" target="_blank" rel="noopener">PDF 열람</a>
                 <a class="btn btn-ghost btn-sm" href="assets/documents/lostark-boss-design.pdf" download="이민용_보스창작_기획서.pdf">PDF 저장</a>
               </div>
             </div>
-          </article>
-        </div>
+            <div class="df-gallery">
+              <figure class="figure df-main"><a href="assets/images/boss-09.webp" target="_blank" rel="noopener"><img src="assets/images/boss-09.webp" width="1600" height="900" loading="lazy" decoding="async" alt="9쪽 핵심 시스템: 망각 게이지 수치별 효과 표, 분열 조각, 1개체에서 2·4개체로 분열하는 전투 구조"></a><figcaption>9쪽 · 핵심 시스템(망각 게이지, 전투 구조)</figcaption></figure>
+              <figure class="figure"><a href="assets/images/boss-06.webp" target="_blank" rel="noopener"><img src="assets/images/boss-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="6쪽 문제점 & 해결방안"></a><figcaption>6쪽 · 문제점 &amp; 해결방안</figcaption></figure>
+              <figure class="figure"><a href="assets/images/boss-15.webp" target="_blank" rel="noopener"><img src="assets/images/boss-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="15쪽 스킬 상세: 망각의 강타 스킬 표"></a><figcaption>15쪽 · 스킬 상세</figcaption></figure>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -273,12 +351,12 @@
       </div>
     </section>
 
-    <!-- 5. 도구 활용 -->
+    <!-- 5. 엔진 & 툴 활용 -->
     <section class="section section-alt" id="tools" aria-labelledby="tools-h">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <h2 id="tools-h">5. 도구 활용</h2>
+            <h2 id="tools-h">5. 엔진 &amp; 툴 활용</h2>
             <p>엔진과 툴로 직접 해 본 작업</p>
           </div>
         </div>
@@ -287,54 +365,50 @@
         </ul>
         <div class="tool-grid">
           <article class="tool">
-            <figure class="figure" style="border:0;border-radius:0"><img src="assets/images/tool-unity.webp" width="1271" height="875" loading="lazy" decoding="async" alt="Unity 작업 화면: 쿼터뷰 액션 게임 플레이 화면과 C# 스크립트"></figure>
-            <div class="tool-body">
+            <figure class="figure tool-fig"><img src="assets/images/tool-unity.webp" width="1271" height="875" loading="lazy" decoding="async" alt="Unity 작업 화면: 쿼터뷰 액션 게임 플레이 화면과 C# 스크립트"></figure>
+            <div class="tool-head">
               <h3>Unity</h3>
               <p class="tool-sub">쿼터뷰 3D 액션 게임 · C# 스크립트</p>
-              <ul class="bullets">
+            </div>
+            <ul class="bullets tool-list">
                 <li>제공된 3D 리소스로 기본 전투 시스템 구현: 이동·점프·회피, 근접·원거리 공격, 무기 교체·재장전, 수류탄, 아이템 획득</li>
                 <li>적 피격·넉백·사망 처리와 Animator 상태 연동</li>
-              </ul>
-              <p class="gain"><span class="meta-label">얻은 점</span><br>플레이어·무기·적·아이템이 스크립트로 연결되어 동작하는 구조 이해</p>
-            </div>
+            </ul>
+            <p class="gain"><span class="meta-label">얻은 점</span><br>플레이어·무기·적·아이템이 스크립트로 연결되어 동작하는 구조 이해</p>
           </article>
           <article class="tool">
-            <figure class="figure" style="border:0;border-radius:0"><img src="assets/images/tool-unreal.webp" width="1271" height="875" loading="lazy" decoding="async" alt="Unreal Engine 작업 화면: Behavior Tree와 Blueprint 노드"></figure>
-            <div class="tool-body">
+            <figure class="figure tool-fig"><img src="assets/images/tool-unreal.webp" width="1271" height="875" loading="lazy" decoding="async" alt="Unreal Engine 작업 화면: Behavior Tree와 Blueprint 노드"></figure>
+            <div class="tool-head">
               <h3>Unreal Engine</h3>
               <p class="tool-sub">몬스터 AI 구현 · Behavior Tree, Blueprint</p>
-              <ul class="bullets">
+            </div>
+            <ul class="bullets tool-list">
                 <li>대기·추격·공격·복귀 등 상태별 노드를 구성하고, Blackboard 변수값에 따라 행동이 선택되도록 설계</li>
                 <li>타겟 선정·스킬 선정 등 상시 검사가 필요한 연산을 태스크·서비스 노드에 할당</li>
-              </ul>
-              <p class="gain"><span class="meta-label">얻은 점</span><br>문서로 설계한 AI 상태 구조가 엔진에서 실제 노드로 구현되는 과정 이해</p>
-            </div>
+            </ul>
+            <p class="gain"><span class="meta-label">얻은 점</span><br>문서로 설계한 AI 상태 구조가 엔진에서 실제 노드로 구현되는 과정 이해</p>
           </article>
           <article class="tool">
-            <figure class="figure" style="border:0;border-radius:0"><img src="assets/images/tool-3dsmax.webp" width="1271" height="875" loading="lazy" decoding="async" alt="3ds Max 모델링 결과: 갑옷 캐릭터의 정면, 측면, 후면"></figure>
-            <div class="tool-body">
+            <figure class="figure tool-fig"><img src="assets/images/tool-3dsmax.webp" width="1271" height="875" loading="lazy" decoding="async" alt="3ds Max 모델링 결과: 갑옷 캐릭터의 정면, 측면, 후면"></figure>
+            <div class="tool-head">
               <h3>3ds Max</h3>
               <p class="tool-sub">캐릭터 모델링 · 아트 파이프라인</p>
-              <ul class="bullets">
+            </div>
+            <ul class="bullets tool-list">
                 <li>기존 3D 캐릭터 모델의 일부 파츠 제작·수정: 투구와 갑옷의 문양, 표면 굴곡, 형태 디테일</li>
                 <li>리깅과 스키닝을 일부 경험하며 골격과 움직임 구현 과정 학습</li>
-              </ul>
-              <p class="gain"><span class="meta-label">얻은 점</span><br>캐릭터 디자인이 실제 3D 리소스로 구현되는 과정 체감</p>
-            </div>
+            </ul>
+            <p class="gain"><span class="meta-label">얻은 점</span><br>캐릭터 디자인이 실제 3D 리소스로 구현되는 과정 체감</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 6. 연락처 -->
+    <!-- 연락처 -->
     <section class="section contact" id="contact" aria-labelledby="contact-h">
       <div class="wrap">
-        <div class="section-head">
-          <div>
-            <h2 id="contact-h">6. 연락처</h2>
-            <p>읽어 주셔서 감사합니다</p>
-          </div>
-        </div>
+        <h2 class="thanks" id="contact-h">읽어 주셔서 감사합니다!</h2>
+        <p class="thanks-sub">다양한 게임을 플레이하고 분석해 온 경험을 바탕으로, 현업에서도 재미의 본질에 집중하는 기획자로 성장하겠습니다.</p>
         <div class="contact-grid">
           <div>
             <ul class="contact-list" role="list">
