@@ -325,7 +325,7 @@ p { margin: 0; }
 
 /* ===== 테마 전환 버튼 ===== */
 .header-right { display: flex; align-items: center; gap: 20px; }
-.theme-toggle {
+.theme-toggle { flex: none;
   display: inline-flex; align-items: center; justify-content: center;
   width: 44px; height: 44px; border-radius: 10px;
   border: 1px solid var(--line); background: var(--card); color: var(--text); cursor: pointer;
