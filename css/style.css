@@ -240,6 +240,7 @@ html[data-theme="light"] .step-line mark { --hl: #ffe066; }
 .proj-meta dd { margin: 2px 0 0; font-weight: 600; }
 @media (min-width: 900px) { .proj-meta { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .proj-main { padding: 24px 20px; display: grid; gap: 24px; }
+.proj-main > * { min-width: 0; }
 @media (min-width: 900px) { .proj-main { grid-template-columns: 1.1fr 1fr; padding: 28px; gap: 36px; } }
 .proj-title { font-size: 24px; font-weight: 800; }
 .proj-sub { margin-top: 2px; color: var(--text-muted); }
@@ -527,18 +528,36 @@ html[data-theme="light"] {
 /* =====================================================================
    후킹: 첫 화면 증거 카드 · 이터널 리턴 질문형 도입 · 배틀 보조 시연
    ===================================================================== */
+.hero { position: relative; overflow: hidden; }
+.hero > .wrap { position: relative; z-index: 1; }
+.hero-text { min-width: 0; }
+.hero-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.hero-bg-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.46; filter: saturate(0.9) contrast(1.05); }
+.hero-bg::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(17,19,23,0.84) 0%, rgba(17,19,23,0.58) 55%, rgba(17,19,23,0.74) 100%),
+    linear-gradient(180deg, rgba(17,19,23,0.22) 0%, var(--bg-soft) 100%);
+}
+html[data-theme="light"] .hero-bg-video { opacity: 0.30; filter: saturate(0.8) brightness(1.08); }
+html[data-theme="light"] .hero-bg::after {
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.70) 55%, rgba(255,255,255,0.80) 100%),
+    linear-gradient(180deg, rgba(255,255,255,0.22) 0%, var(--bg-soft) 100%);
+}
+
 .hero-title .hl { color: var(--accent-text); }
-.hero-proof { margin-top: 32px; display: grid; gap: 12px; max-width: 720px; }
-@media (min-width: 640px) { .hero-proof { grid-template-columns: 1fr 1fr; } }
-.proof { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px; text-decoration: none; color: var(--text);
-  background: var(--card); border: 1px solid var(--line-strong); border-left: 6px solid var(--brand); border-radius: var(--r);
+.hero-proof { margin-top: 26px; display: grid; gap: 10px; max-width: none; }
+@media (min-width: 640px) { .hero-proof { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.proof { display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; text-decoration: none; color: var(--text);
+  background: var(--card); border: 1px solid var(--line-strong); border-left: 4px solid var(--brand); border-radius: var(--r);
   transition: border-color .15s, transform .15s; }
 .proof:hover { border-color: var(--accent-text); transform: translateY(-2px); }
-.proof-k { font-size: 14px; color: var(--text-muted); letter-spacing: 0.02em; }
-.proof-k b { font-weight: 800; color: var(--accent-text); margin-right: 6px; font-size: 15px; }
-.proof-t { font-size: 19px; font-weight: 800; line-height: 1.35; }
-.proof-d { font-size: 16px; color: var(--text-sub); line-height: 1.5; }
-.proof-go { margin-top: auto; padding-top: 4px; font-size: 15px; font-weight: 700; color: var(--accent-text); }
+.proof-k { font-size: 13px; color: var(--text-muted); letter-spacing: 0.02em; }
+.proof-k b { font-weight: 800; color: var(--accent-text); margin-right: 5px; font-size: 13px; }
+.proof-t { font-size: 16px; font-weight: 800; line-height: 1.35; }
+.proof-d { font-size: 15px; color: var(--text-sub); line-height: 1.5; }
+.proof-go { margin-top: auto; padding-top: 4px; font-size: 14px; font-weight: 700; color: var(--accent-text); }
 @media (prefers-reduced-motion: reduce) { .proof { transition: none; } .proof:hover { transform: none; } }
 
 /* 질문형 도입 */
@@ -585,8 +604,21 @@ html[data-theme="light"] {
 @media (prefers-reduced-motion: reduce) { .demo-live::before { animation: none; } }
 @media (max-width: 480px) { .demo-live { display: none; } }
 .demo-media { position: relative; overflow: hidden; background: #0b0c0f; aspect-ratio: 960 / 576; }
+.demo-media-16x9 { aspect-ratio: 16 / 9; }
 .demo-video { width: 100%; height: 100%; display: block; object-fit: cover; }
 .demo-toggle { position: absolute; right: 10px; bottom: 10px; width: 40px; height: 40px; border-radius: var(--r); border: 1px solid rgba(255,255,255,.25); background: rgba(0,0,0,.6); color: #fff; font-size: 14px; cursor: pointer; }
+.demo-controls { position: absolute; right: 10px; bottom: 10px; display: flex; gap: 6px; }
+.demo-controls .demo-toggle,
+.demo-controls .demo-mute { position: static; width: 40px; height: 40px; border-radius: var(--r); border: 1px solid rgba(255,255,255,.25); background: rgba(0,0,0,.65); color: #fff; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; padding: 0; }
+.demo-controls .demo-mute svg { width: 18px; height: 18px; }
+.demo-controls .demo-mute .icon-sound { display: none; }
+.demo-controls .demo-mute.is-unmuted { border-color: var(--accent-text); background: rgba(11,93,132,.85); }
+.demo-controls .demo-mute.is-unmuted .icon-muted { display: none; }
+.demo-controls .demo-mute.is-unmuted .icon-sound { display: block; }
+.shots.shots-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 0; }
+.shots.shots-2 .figure img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.shots.shots-2 .figure figcaption { padding: 6px 10px; font-size: 14px; text-align: left; }
+@media (max-width: 479px) { .shots.shots-2 { grid-template-columns: 1fr; } }
 .demo-lead { margin-top: 12px; color: var(--text-sub); }
 .demo-lead strong { color: var(--text); }
 .demo-cta { margin-top: 20px; min-height: 54px; width: 100%; font-size: 17px; }

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>이민용 | 게임 기획 포트폴리오</title>
-  <meta name="description" content="재미의 핵심을 찾고 구체화하는 기획자 이민용의 게임 기획 포트폴리오. 이터널 리턴 분석 & 제안서, 로스트아크 기획서 2종, 팀 프로젝트 JUMPER, 포켓몬챔피언스 배틀 보조 프로그램.">
+  <meta name="description" content="재미의 핵심을 찾고 구체화하는 기획자 이민용의 게임 기획 포트폴리오. 이터널 리턴 분석 & 제안서, 로스트아크 기획서 2종, 팀 프로젝트 JUMPER, 포켓몬챔피언스 배틀 보조 프로그램, 몰이 사냥(UE 5.7 프로토타입).">
   <meta name="author" content="이민용">
   <meta name="robots" content="noindex, nofollow">
   <meta property="og:type" content="website">
@@ -49,6 +49,12 @@
   <main id="main">
     <!-- 1. 첫 화면 -->
     <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true">
+        <video class="hero-bg-video" muted loop playsinline autoplay preload="metadata" poster="assets/images/hero-bg-poster.webp">
+          <source src="assets/videos/hero-bg.webm" type="video/webm">
+          <source src="assets/videos/hero-bg.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="wrap hero-grid">
         <div class="hero-text">
           <p class="hero-role">Game Designer</p>
@@ -70,13 +76,16 @@
             <a class="proof" href="#eternal-return">
               <span class="proof-k"><b>찾기</b> 분석 &amp; 제안</span>
               <strong class="proof-t">제3자 개입은 문제가 아니다</strong>
-              <span class="proof-d">이터널 리턴 패치 1.4 ~ 12.5를 추적해, 진짜 문제를 다시 정의했습니다.</span>
               <span class="proof-go">사례 보기 →</span>
             </a>
             <a class="proof" href="#ai">
-              <span class="proof-k"><b>구체화</b> 직접 구현</span>
+              <span class="proof-k"><b>구체화</b> 개인 툴</span>
               <strong class="proof-t">선출을 대신 판단해 주는 프로그램</strong>
-              <span class="proof-d">상대 6마리를 넣으면 선출 3마리, 선봉, 대처법까지. 웹에서 바로 써 볼 수 있습니다.</span>
+              <span class="proof-go">시연 보기 →</span>
+            </a>
+            <a class="proof" href="#monster-ai-proto">
+              <span class="proof-k"><b>검증</b> 언리얼 구현</span>
+              <strong class="proof-t">기획서를 언리얼로 구현·개정</strong>
               <span class="proof-go">시연 보기 →</span>
             </a>
           </div>
@@ -296,6 +305,7 @@
               <div class="btn-row">
                 <a class="btn btn-ghost btn-sm" href="assets/documents/lostark-monster-ai.pdf" target="_blank" rel="noopener">PDF 열람</a>
                 <a class="btn btn-ghost btn-sm" href="assets/documents/lostark-monster-ai.pdf" download="이민용_일반몬스터_범용AI_기획서.pdf">PDF 저장</a>
+                <a class="btn btn-primary btn-sm" href="#monster-ai-proto">UE 5.7 프로토타입 보기 →</a>
               </div>
             </div>
             <div class="df-gallery">
@@ -439,7 +449,7 @@
         <div class="section-head">
           <div>
             <h2 id="ai-h">3. AI 활용</h2>
-            <p>AI로 직접 만든 개인 툴</p>
+            <p>AI와 협업해 기획하고 구현한 결과물</p>
           </div>
         </div>
 
@@ -513,6 +523,99 @@
               <div class="roles">
                 <div class="role"><strong>나</strong>문제 정의와 기능 설계, 판단 기준과 통계 범위 결정, 기능 추가 순서 결정, 검증셋 구축 지시, 지인 테스트 요청과 직접 사용</div>
                 <div class="role"><strong>AI</strong>Claude Code: 프로그램 구현<br>ChatGPT: 자료 조사, 통계 분석<br>결과물은 직접 확인하고 수정</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj" id="monster-ai-proto" aria-labelledby="monster-ai-proto-h">
+          <dl class="proj-meta">
+            <div><dt>기간</dt><dd>2026.11 (약 2주)</dd></div>
+            <div><dt>형태</dt><dd>개인 프로젝트 (AI 협업)</dd></div>
+            <div><dt>내 역할</dt><dd>게임 기획, AI 명세 개정, 플레이 검증</dd></div>
+            <div><dt>사용 도구</dt><dd>UE 5.7, Claude Code(MCP), GPT, Gemini</dd></div>
+          </dl>
+          <div class="demo">
+            <div class="demo-frame">
+              <div class="demo-bar" aria-hidden="true"><i></i><i></i><i></i><span class="demo-url">MonsterAI_Proto · UE 5.7</span><span class="demo-live">실제 플레이 · 소리 켜기 가능</span></div>
+              <div class="demo-media demo-media-16x9">
+                <video class="demo-video" muted loop playsinline preload="none" poster="assets/images/monsterai-poster.webp" aria-label="몰이 사냥(MonsterAI_Proto) 실제 플레이 영상: 몬스터 상태 디버그, 공격 예고 개정 전후, 몰아 잡기, 강화 선택, 구역 전환과 결과 화면">
+                  <source src="assets/videos/monsterai-demo.webm" type="video/webm">
+                  <source src="assets/videos/monsterai-demo.mp4" type="video/mp4">
+                </video>
+                <div class="demo-controls">
+                  <button class="demo-mute" type="button" aria-label="시연 영상 소리 켜기" title="소리 켜기 / 끄기">
+                    <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="m22 9-6 6M16 9l6 6"/></svg>
+                    <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
+                  </button>
+                  <button class="demo-toggle" type="button" aria-label="시연 영상 일시정지">❚❚</button>
+                </div>
+              </div>
+            </div>
+            <div class="demo-side">
+              <p class="doc-type demo-name">몰이 사냥 (MonsterAI_Proto)</p>
+              <p class="hook-q sm">기획서로 만든 몬스터 AI,<br>직접 싸워 보며 검증하기</p>
+              <p class="demo-lead">「일반 몬스터 범용 AI 기획서」를 <strong>언리얼 5.7 플레이 프로토타입</strong>으로 구현하고, 플레이 테스트로 빈틈 49건을 찾아 명세를 개정했습니다.</p>
+              <ul class="fact-row" role="list">
+                <li><b>49건</b><span>빈틈 발견·해결</span></li>
+                <li><b>2회</b><span>AI 명세 개정</span></li>
+                <li><b>5구역</b><span>플레이 완결판</span></li>
+              </ul>
+              <a class="btn btn-primary demo-cta" href="#ai-doc-h">원본 AI 기획서 &amp; FSM 보기 ↑</a>
+              <p class="note">영상 오른쪽 아래 버튼으로 효과음(소리)을 켜거나 일시정지할 수 있습니다.</p>
+            </div>
+          </div>
+          <div class="proj-main">
+            <div>
+              <h3 class="proj-title" id="monster-ai-proto-h">몰이 사냥 (MonsterAI_Proto)</h3>
+              <p class="proj-sub">쿼터뷰 3D 액션 로그라이트 · UE 5.7 AI 협업 프로토타입</p>
+
+              <h4>기획 의도</h4>
+              <p>문서로 설계한 「일반 몬스터 범용 AI 기획서」가 실제 게임에서 재미와 전략으로 작동하는지 검증하려고 제작했습니다. 적이 한꺼번에 덤비는 아레나가 아니라 무리가 흩어져 순찰하는 필드에서, 추격 범위·행동 범위·복귀 규칙 자체가 공략 선택이 되도록 설계했습니다.</p>
+              <h4>핵심 재미</h4>
+              <div class="pillars">
+                <div class="pillar"><strong>① 성향 읽기와 몰아 잡기</strong>비선공 졸개·좌표 순찰병·랜덤 돌격병의 규칙을 읽어 하나씩 끌지, 몰아서 범위 스킬로 쓸어 담을지 선택합니다.</div>
+                <div class="pillar"><strong>② 3갈래 빌드 선택</strong>경험치 구슬과 레벨업 강화 3택1(휩쓸기·결투·치고 빠지기, 10종)에 따라 공략 순서와 손맛이 달라집니다.</div>
+              </div>
+              <h4>플레이 검증 → 기획서 개정</h4>
+              <ul class="bullets">
+                <li>공격 예고 &amp; 판정 모양 분화(명세 5·9장 개정): 플레이 시 예고 없이 맞아 억울한 문제를 발견해 4단계 공격 예고를 도입했고, 재검증에서 모든 공격이 원형 광역기처럼 보이는 문제를 확인해 원·부채꼴·직선(skillShape)으로 세분화</li>
+                <li>전투·성장 규칙 보완: 기본 공격 단일→90° 부채꼴 다중 타격(빈틈 49), 구역 종료 보상→경험치 구슬 &amp; 레벨업 즉시 선택(빈틈 35·36), 구르기 중 몬스터 통과 및 끼임 방지 등 총 49건의 빈틈을 기록·해결</li>
+                <li>데이터 테이블 중심 설계: DT_Monster · DT_Skill · DT_Upgrade · DT_Feel 수치 조정만으로 몬스터 4종(졸개·순찰병·돌격병·엘리트)과 타격감 3장치(히트스톱·피해 숫자·카메라 흔들림)를 제어</li>
+              </ul>
+              <h4>결과 · 배운 점</h4>
+              <p>약 2주 만에 5개 구역(흩어짐·순찰·결투 시험장·밀집·혼합), 던전 아트, UI 4종, 페이드 연출까지 한 판이 완결되는 프로토타입을 완성하며 기획 → 구현 → 검증 → 명세 개정의 전체 사이클을 직접 체감했습니다.</p>
+            </div>
+            <div>
+              <div class="shots shots-2">
+                <figure class="figure">
+                  <a href="assets/images/monsterai-debug.webp" target="_blank" rel="noopener"><img src="assets/images/monsterai-debug.webp" width="1280" height="720" loading="lazy" decoding="async" alt="V키 디버그 모드 화면: 몬스터 머리 위 상태 글자와 추격·행동 범위 원 표시"></a>
+                  <figcaption>V키 디버그 · 상태 &amp; 범위 원</figcaption>
+                </figure>
+                <figure class="figure">
+                  <a href="assets/images/monsterai-telegraph.webp" target="_blank" rel="noopener"><img src="assets/images/monsterai-telegraph.webp" width="1280" height="720" loading="lazy" decoding="async" alt="명세 개정 반영 화면: 몬스터 공격 예고 판과 전투 HUD"></a>
+                  <figcaption>개정 반영 · 공격 예고 &amp; 전투 HUD</figcaption>
+                </figure>
+                <figure class="figure">
+                  <a href="assets/images/monsterai-upgrade.webp" target="_blank" rel="noopener"><img src="assets/images/monsterai-upgrade.webp" width="1280" height="720" loading="lazy" decoding="async" alt="레벨업 강화 선택 3택1 화면: 갈래별 색 띠와 수치 변화 미리보기"></a>
+                  <figcaption>강화 3택1 · 갈래별 색 띠</figcaption>
+                </figure>
+                <figure class="figure">
+                  <a href="assets/images/monsterai-result.webp" target="_blank" rel="noopener"><img src="assets/images/monsterai-result.webp" width="1280" height="720" loading="lazy" decoding="async" alt="클리어 결과 화면: 한 번에 가장 많이 잡은 수 강조와 걸린 시간·처치 수 요약"></a>
+                  <figcaption>클리어 결과 · 최대 동시 처치 강조</figcaption>
+                </figure>
+              </div>
+              <h4>제작 과정</h4>
+              <ol class="stages" role="list">
+                <li><span class="stage-n">1</span><div><strong>AI 구현</strong>기획서 상태·전환·데이터 테이블을 UE 5.7 블루프린트로 그대로 구현</div></li>
+                <li><span class="stage-n">2</span><div><strong>전투·루프</strong>5구역 진행, 경험치 구슬, 3갈래 강화 10종, 손맛 3장치 구현</div></li>
+                <li><span class="stage-n">3</span><div><strong>검증·개정</strong>플레이 테스트로 빈틈 49건 해결, 공격 예고·판정 모양 명세 2차 개정</div></li>
+                <li><span class="stage-n">4</span><div><strong>아트·UI 마감</strong>던전 아트 5구역, AI 3D 실시간 리타깃, UI 4화면·페이드 적용</div></li>
+              </ol>
+              <h4>AI 협업과 역할 분담</h4>
+              <div class="roles">
+                <div class="role"><strong>나</strong>기획 초안·v0.2 개정, 빈틈 49건 의사결정, 매 단계 직접 플레이 검증, 에셋·UI·조명 방향 결정, 병렬 작업 총괄</div>
+                <div class="role"><strong>AI</strong>Claude Code: Unreal MCP 구현·병렬 방 3개 운영<br>GPT: 로직·가중치 확률표·회귀 체크리스트 38건<br>Gemini: 레퍼런스·판독성 시각 검토<br>Tripo·ElevenLabs: 3D 리깅·효과음</div>
               </div>
             </div>
           </div>

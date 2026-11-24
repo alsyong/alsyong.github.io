@@ -144,31 +144,68 @@ document.querySelectorAll('[data-youtube]').forEach(function (box) {
   });
 })();
 
-// 배틀 보조 시연 영상: 화면에 보일 때만 소리 없이 재생, 정지 버튼, 움직임 줄이기 설정 존중
+// 첫 화면 배경 영상: 화면에 보일 때만 소리 없이 반복, 움직임 줄이기 설정 존중
 (function () {
-  var v = document.querySelector('.demo-video');
-  var btn = document.querySelector('.demo-toggle');
-  if (!v || !btn) return;
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var userPaused = reduce;
-  function label() {
-    var playing = !v.paused;
-    btn.textContent = playing ? '❚❚' : '▶';
-    btn.setAttribute('aria-label', playing ? '시연 영상 일시정지' : '시연 영상 재생');
+  var v = document.querySelector('.hero-bg-video');
+  if (!v) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    v.removeAttribute('autoplay');
+    v.pause();
+    return;
   }
-  btn.addEventListener('click', function () {
-    if (v.paused) { userPaused = false; v.play().catch(function () {}); }
-    else { userPaused = true; v.pause(); }
-  });
-  v.addEventListener('play', label); v.addEventListener('pause', label);
-  label();
   if (!('IntersectionObserver' in window)) return;
   new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
-      if (e.isIntersecting && !userPaused) { v.play().catch(function () {}); }
-      else if (!e.isIntersecting && !v.paused) { v.pause(); }
+      if (e.isIntersecting) v.play().catch(function () {});
+      else if (!v.paused) v.pause();
     });
-  }, { threshold: 0.4 }).observe(v);
+  }, { threshold: 0.1 }).observe(v);
+})();
+
+// 시연 영상(배틀 보조 · 몰이 사냥): 화면에 보일 때만 소리 없이 재생, 일시정지·소리 켜기 버튼, 움직임 줄이기 설정 존중
+(function () {
+  var boxes = document.querySelectorAll('.demo-media');
+  if (!boxes.length) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  boxes.forEach(function (box) {
+    var v = box.querySelector('.demo-video');
+    var btn = box.querySelector('.demo-toggle');
+    var muteBtn = box.querySelector('.demo-mute');
+    if (!v || !btn) return;
+    var userPaused = reduce;
+    function label() {
+      var playing = !v.paused;
+      btn.textContent = playing ? '❚❚' : '▶';
+      btn.setAttribute('aria-label', playing ? '시연 영상 일시정지' : '시연 영상 재생');
+    }
+    function syncMute() {
+      if (!muteBtn) return;
+      var unmuted = !v.muted;
+      muteBtn.classList.toggle('is-unmuted', unmuted);
+      muteBtn.setAttribute('aria-label', unmuted ? '시연 영상 소리 끄기' : '시연 영상 소리 켜기');
+    }
+    btn.addEventListener('click', function () {
+      if (v.paused) { userPaused = false; if (v.preload === 'none') v.preload = 'auto'; v.play().catch(function () {}); }
+      else { userPaused = true; v.pause(); }
+    });
+    if (muteBtn) {
+      muteBtn.addEventListener('click', function () {
+        v.muted = !v.muted;
+        if (!v.muted && v.paused) { userPaused = false; if (v.preload === 'none') v.preload = 'auto'; v.play().catch(function () {}); }
+        syncMute();
+      });
+      syncMute();
+    }
+    v.addEventListener('play', label); v.addEventListener('pause', label);
+    label();
+    if (!('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting && !userPaused) { if (v.preload === 'none') v.preload = 'auto'; v.play().catch(function () {}); }
+        else if (!e.isIntersecting && !v.paused) { v.pause(); }
+      });
+    }, { threshold: 0.35 }).observe(v);
+  });
 })();
 
 // 프로젝트 플레이 클립: GIF처럼 소리 없이 반복, 화면에 보일 때만 재생, 움직임 줄이기 설정이면 정지 화면
